@@ -6,7 +6,7 @@
  */
 
 import React, { useState } from 'react';
-import { Text, Button, View } from 'react-native';
+import { Text, Button, View , TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -37,132 +37,24 @@ const Home = () => {
 }
 
 const Login = (props: { navigation: { navigate: (arg0: string) => void; }; }) => {
-  return (<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Text style={{ fontSize: 30 }}>Login Screen</Text>
-    <Button title='Go to Home Page' onPress={() => props.navigation.navigate('Home')} />
-  </View>)
-}
-
+  return (
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text style={{ fontSize: 30 }}>Login Screen</Text>
+      <TouchableOpacity
+        onPress={() => props.navigation.navigate('Home')}
+        style={{
+          backgroundColor: '#007bff', // Change the background color
+          padding: 10, // Adjust padding
+          borderRadius: 5, // Apply border radius
+          margin: 10, // Adjust margin
+          borderWidth: 0.5, // Add border width
+          borderColor: 'black' // Add border color
+        }}
+      >
+       <Text style={{ color: '#fff', fontSize: 20, fontWeight: 'bold' }}>Go to Home Page</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-// import {
-//   SafeAreaView,
-//   ScrollView,
-//   StatusBar,
-//   StyleSheet,
-//   Text,
-//   useColorScheme,
-//   View,
-// } from 'react-native';
-
-// import {
-//   Colors,
-//   DebugInstructions,
-//   Header,
-//   LearnMoreLinks,
-//   ReloadInstructions,
-// } from 'react-native/Libraries/NewAppScreen';
-
-// type SectionProps = PropsWithChildren<{
-//   title: string;
-// }>;
-
-// function Section({children, title}: SectionProps): JSX.Element {
-//   const isDarkMode = useColorScheme() === 'dark';
-//   return (
-//     <View style={styles.sectionContainer}>
-//       <Text
-//         style={[
-//           styles.sectionTitle,
-//           {
-//             color: isDarkMode ? Colors.white : Colors.black,
-//           },
-//         ]}>
-//         {title}
-//       </Text>
-//       <Text
-//         style={[
-//           styles.sectionDescription,
-//           {
-//             color: isDarkMode ? Colors.light : Colors.dark,
-//           },
-//         ]}>
-//         {children}
-//       </Text>
-//     </View>
-//   );
-// }
-
-// function App(): JSX.Element {
-//   const isDarkMode = useColorScheme() === 'dark';
-
-//   const backgroundStyle = {
-//     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-//   };
-
-//   return (
-//     <SafeAreaView style={backgroundStyle}>
-//       <StatusBar
-//         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-//         backgroundColor={backgroundStyle.backgroundColor}
-//       />
-//       <ScrollView
-//         contentInsetAdjustmentBehavior="automatic"
-//         style={backgroundStyle}>
-//         <Header />
-//         <View
-//           style={{
-//             backgroundColor: isDarkMode ? Colors.black : Colors.white,
-//           }}>
-//           <Section title="Step One">
-//             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-//             screen and then come back to see your edits.
-//           </Section>
-//           <Section title="See Your Changes">
-//             <ReloadInstructions />
-//           </Section>
-//           <Section title="Debug">
-//             <DebugInstructions />
-//           </Section>
-//           <Section title="Learn More">
-//             Read the docs to discover what to do next:
-//           </Section>
-//           <LearnMoreLinks />
-//         </View>
-//       </ScrollView>
-//     </SafeAreaView>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   sectionContainer: {
-//     marginTop: 32,
-//     paddingHorizontal: 24,
-//   },
-//   sectionTitle: {
-//     fontSize: 24,
-//     fontWeight: '600',
-//   },
-//   sectionDescription: {
-//     marginTop: 8,
-//     fontSize: 18,
-//     fontWeight: '400',
-//   },
-//   highlight: {
-//     fontWeight: '700',
-//   },
-// });
-
-// export default App;
